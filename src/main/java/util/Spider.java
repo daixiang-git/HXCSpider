@@ -128,10 +128,12 @@ public class Spider {
             System.out.println("程序结束！！");
             return 0;
         }
-        if(res3.body().contains("今日预约学时数已超上限")||res3.body().contains("教练已约满")) {
-            System.out.println("预约失败:" + res3.body());
-            return 1;
+        if(res3.body().contains("今日预约学时数已超上限")) {
+            System.out.println("-------------成功预约到一条-------------");
+            System.out.println("预约成功:" + res3.body());
+            return 0;
         }
+        System.out.println("预约失败:" + res3.body());
         return 2;
     }
 }
